@@ -194,3 +194,9 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+ItemsManagementDB.accdb
+ItemsManagementDBDataSet.Designer.vb
+ItemsManagementDBDataSet.xsc
+ItemsManagementDBDataSet.xsd
+ItemsManagementDBDataSet.xss
