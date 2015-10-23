@@ -9,8 +9,23 @@
             Dim message As String
 
             Dim iName As String = nameTB.Text
-            Dim iPrice As Decimal = Decimal.Parse(priceTB.Text)
-            Dim iQtt As Integer = Integer.Parse(quantityTB.Text)
+
+            Dim iPrice As Decimal
+
+            If priceTB.Text = "" Then
+                iPrice = 0
+            Else
+                iPrice = Decimal.Parse(priceTB.Text)
+            End If
+
+            Dim iQtt As Integer
+
+            If quantityTB.Text = "" Then
+                iQtt = 0
+            Else
+                iQtt = Integer.Parse(quantityTB.Text)
+            End If
+
             Dim iUnit As String = unitCB.SelectedItem.ToString
 
             If addEditItemBtn.Text = "Add Item" Then
@@ -44,7 +59,7 @@
         End If
 
         If priceTB.Text = "" Then
-            message &= "Please provide a price for the item." & vbCrLf
+            message &= ""
         Else
             If Not IsNumeric(priceTB.Text) Then
                 message &= "Invalid price format." & vbCrLf
@@ -52,7 +67,7 @@
         End If
 
         If quantityTB.Text = "" Then
-            message &= "Please provide a quantity for the item." & vbCrLf
+            message &= ""
         Else
             If Not IsNumeric(quantityTB.Text) Then
                 message &= "Invalid quantity format." & vbCrLf

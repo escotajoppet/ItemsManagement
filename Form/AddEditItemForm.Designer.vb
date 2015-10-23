@@ -82,7 +82,7 @@ Partial Class AddEditItemForm
         Me.addEditItemBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.addEditItemBtn.Name = "addEditItemBtn"
         Me.addEditItemBtn.Size = New System.Drawing.Size(130, 35)
-        Me.addEditItemBtn.TabIndex = 6
+        Me.addEditItemBtn.TabIndex = 4
         Me.addEditItemBtn.UseVisualStyleBackColor = True
         '
         'unitCB
@@ -93,14 +93,14 @@ Partial Class AddEditItemForm
         Me.unitCB.Location = New System.Drawing.Point(175, 336)
         Me.unitCB.Name = "unitCB"
         Me.unitCB.Size = New System.Drawing.Size(573, 28)
-        Me.unitCB.TabIndex = 6
+        Me.unitCB.TabIndex = 3
         '
         'quantityTB
         '
         Me.quantityTB.Location = New System.Drawing.Point(175, 232)
         Me.quantityTB.Name = "quantityTB"
         Me.quantityTB.Size = New System.Drawing.Size(574, 26)
-        Me.quantityTB.TabIndex = 5
+        Me.quantityTB.TabIndex = 2
         '
         'Label4
         '
@@ -116,14 +116,14 @@ Partial Class AddEditItemForm
         Me.priceTB.Location = New System.Drawing.Point(175, 128)
         Me.priceTB.Name = "priceTB"
         Me.priceTB.Size = New System.Drawing.Size(574, 26)
-        Me.priceTB.TabIndex = 3
+        Me.priceTB.TabIndex = 1
         '
         'nameTB
         '
         Me.nameTB.Location = New System.Drawing.Point(175, 24)
         Me.nameTB.Name = "nameTB"
         Me.nameTB.Size = New System.Drawing.Size(574, 26)
-        Me.nameTB.TabIndex = 2
+        Me.nameTB.TabIndex = 0
         '
         'Label3
         '

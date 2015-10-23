@@ -25,16 +25,18 @@ Partial Class ItemsListForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.itemsDGV = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.searchTB = New System.Windows.Forms.TextBox()
-        Me.addItemBtn = New System.Windows.Forms.Button()
-        Me.deleteItemBtn = New System.Windows.Forms.Button()
-        Me.editItemBtn = New System.Windows.Forms.Button()
         Me.itemIDCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.itemNameCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.itemPriceCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.itemQuantityCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.itemUnitCol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.searchTB = New System.Windows.Forms.TextBox()
+        Me.addItemBtn = New System.Windows.Forms.Button()
+        Me.deleteItemBtn = New System.Windows.Forms.Button()
+        Me.editItemBtn = New System.Windows.Forms.Button()
+        Me.saveListToFileBtn = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.itemsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,7 +59,7 @@ Partial Class ItemsListForm
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox1.Size = New System.Drawing.Size(753, 454)
+        Me.GroupBox1.Size = New System.Drawing.Size(753, 409)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Items list"
@@ -73,8 +75,43 @@ Partial Class ItemsListForm
         Me.itemsDGV.Name = "itemsDGV"
         Me.itemsDGV.ReadOnly = True
         Me.itemsDGV.RowHeadersVisible = False
-        Me.itemsDGV.Size = New System.Drawing.Size(736, 415)
+        Me.itemsDGV.Size = New System.Drawing.Size(736, 370)
         Me.itemsDGV.TabIndex = 0
+        '
+        'itemIDCol
+        '
+        Me.itemIDCol.HeaderText = "ID"
+        Me.itemIDCol.Name = "itemIDCol"
+        Me.itemIDCol.ReadOnly = True
+        Me.itemIDCol.Visible = False
+        '
+        'itemNameCol
+        '
+        Me.itemNameCol.HeaderText = "Name"
+        Me.itemNameCol.Name = "itemNameCol"
+        Me.itemNameCol.ReadOnly = True
+        Me.itemNameCol.Width = 184
+        '
+        'itemPriceCol
+        '
+        Me.itemPriceCol.HeaderText = "Price"
+        Me.itemPriceCol.Name = "itemPriceCol"
+        Me.itemPriceCol.ReadOnly = True
+        Me.itemPriceCol.Width = 184
+        '
+        'itemQuantityCol
+        '
+        Me.itemQuantityCol.HeaderText = "Quantity"
+        Me.itemQuantityCol.Name = "itemQuantityCol"
+        Me.itemQuantityCol.ReadOnly = True
+        Me.itemQuantityCol.Width = 182
+        '
+        'itemUnitCol
+        '
+        Me.itemUnitCol.HeaderText = "Unit of Measurement"
+        Me.itemUnitCol.Name = "itemUnitCol"
+        Me.itemUnitCol.ReadOnly = True
+        Me.itemUnitCol.Width = 182
         '
         'Label2
         '
@@ -125,46 +162,34 @@ Partial Class ItemsListForm
         Me.editItemBtn.Text = "Edit Item"
         Me.editItemBtn.UseVisualStyleBackColor = True
         '
-        'itemIDCol
+        'saveListToFileBtn
         '
-        Me.itemIDCol.HeaderText = "ID"
-        Me.itemIDCol.Name = "itemIDCol"
-        Me.itemIDCol.ReadOnly = True
-        Me.itemIDCol.Visible = False
+        Me.saveListToFileBtn.Location = New System.Drawing.Point(631, 513)
+        Me.saveListToFileBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.saveListToFileBtn.Name = "saveListToFileBtn"
+        Me.saveListToFileBtn.Size = New System.Drawing.Size(140, 35)
+        Me.saveListToFileBtn.TabIndex = 8
+        Me.saveListToFileBtn.Text = "Save List to File"
+        Me.saveListToFileBtn.UseVisualStyleBackColor = True
         '
-        'itemNameCol
+        'Label3
         '
-        Me.itemNameCol.HeaderText = "Name"
-        Me.itemNameCol.Name = "itemNameCol"
-        Me.itemNameCol.ReadOnly = True
-        Me.itemNameCol.Width = 184
-        '
-        'itemPriceCol
-        '
-        Me.itemPriceCol.HeaderText = "Price"
-        Me.itemPriceCol.Name = "itemPriceCol"
-        Me.itemPriceCol.ReadOnly = True
-        Me.itemPriceCol.Width = 184
-        '
-        'itemQuantityCol
-        '
-        Me.itemQuantityCol.HeaderText = "Quantity"
-        Me.itemQuantityCol.Name = "itemQuantityCol"
-        Me.itemQuantityCol.ReadOnly = True
-        Me.itemQuantityCol.Width = 182
-        '
-        'itemUnitCol
-        '
-        Me.itemUnitCol.HeaderText = "Unit of Measurement"
-        Me.itemUnitCol.Name = "itemUnitCol"
-        Me.itemUnitCol.ReadOnly = True
-        Me.itemUnitCol.Width = 182
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(14, 520)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(269, 20)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Note: Hit 'Ctrl' to select multiple items"
         '
         'ItemsListForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.saveListToFileBtn)
         Me.Controls.Add(Me.editItemBtn)
         Me.Controls.Add(Me.deleteItemBtn)
         Me.Controls.Add(Me.addItemBtn)
@@ -195,4 +220,6 @@ Partial Class ItemsListForm
     Friend WithEvents itemPriceCol As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents itemQuantityCol As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents itemUnitCol As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents saveListToFileBtn As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
